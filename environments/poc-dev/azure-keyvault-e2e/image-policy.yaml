@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: azure-keyvault-e2e
+    name: azure-keyvault-e2e-dev
   policy:
     semver:
       range: "1.0.x"
