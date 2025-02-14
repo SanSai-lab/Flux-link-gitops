@@ -13,5 +13,5 @@ spec:
   interval: 1m
   values:
     image:
-      repository: saipocregistry.azurecr.io/dmo/azure-keyvault-e2e
+      repository: saipocregistry.azurecr.io/azure-keyvault-e2e
       tag: latest
