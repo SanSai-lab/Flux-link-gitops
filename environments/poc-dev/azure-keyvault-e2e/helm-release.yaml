@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: azure-keyvault-e2e
+      chart: ./charts/azure-keyvault-e2e
       sourceRef:
         kind: HelmRepository
         name: saipocregistry.azurecr.io
