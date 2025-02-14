@@ -4,10 +4,21 @@ metadata:
   name: azure-keyvault-e2e-automation
   namespace: flux-system
 spec:
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+    push:
+      branch: main
+  interval: 1m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: Flux-link-gitops
   update:
-    path: ./environments/poc-dev/azure-keyvault-e2e/
+    path: ./environments/poc-dev/azure-keyvault-e2e
     strategy: Setters
-  interval: 5m

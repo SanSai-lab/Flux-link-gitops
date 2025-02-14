@@ -1,9 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: ImageRepository
 metadata:
-  name: azure-keyvault-e2e
+  name: azure-keyvault-e2e-dev
   namespace: flux-system
 spec:
-  image: saipocregistry.azurecr.io/azure-keyvault-e2e
-  interval: 1m
-  provider: azure
+  image: saipocregistry.azurecr.io/dmo/azure-keyvault-e2e
+  interval: 1m0s
+  secretRef:
+    name: image-pull-secret

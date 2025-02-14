@@ -4,8 +4,11 @@ metadata:
   name: azure-keyvault-e2e-policy-dev
   namespace: flux-system
 spec:
+  filterTags:
+    extract: '$ts'
+    pattern: '^main-[a-fA-F0-9]+-(?P<ts>.*)'
   imageRepositoryRef:
     name: azure-keyvault-e2e-dev
   policy:
-    semver:
-      range: "1.0.x"
+    numerical:
+      order: asc
