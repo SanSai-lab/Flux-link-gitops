@@ -1,0 +1,11 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: azure-keyvault-e2e-policy
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: azure-keyvault-e2e
+  policy:
+    semver:
+      range: "1.0.x"

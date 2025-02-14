@@ -1,0 +1,13 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: azure-keyvault-e2e-automation
+  namespace: flux-system
+spec:
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  update:
+    path: ./environments/poc-uat/azure-keyvault-e2e/
+    strategy: Setters
+  interval: 5m
