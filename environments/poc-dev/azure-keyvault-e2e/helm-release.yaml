@@ -2,14 +2,15 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: azure-keyvault-e2e
-  namespace: poc-dev
+  namespace: poc-dev  # Ensure this is correct
 spec:
   chart:
     spec:
-      chart: ./charts/azure-keyvault-e2e
+      chart: charts/azure-keyvault-e2e  # Correct path (NO `./`)
       sourceRef:
-        kind: HelmRepository
-        name: saipocregistry.azurecr.io
+        kind: GitRepository  # Since the chart is stored in Git
+        name: flux-system  # Your GitRepository name
+        namespace: flux-system  # GitRepo namespace
   interval: 1m
   values:
     image:
